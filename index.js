@@ -7,6 +7,7 @@ const productroute=require('./routes/product')
 const cartroute=require('./routes/cart')
 const authroute=require('./routes/auth')
 const orderroute=require('./routes/order')
+const striperoute=require('./routes/stripe')
 const cors=require("cors")
 
 dotenv.config()//env config
@@ -23,6 +24,7 @@ app.use('/api/auth',authroute)
 app.use('/api/products',productroute)
 app.use('/api/carts',cartroute)
 app.use('/api/orders',orderroute)
+app.use('/api/payment',striperoute)
 app.get('/api/test',()=>{
     console.log('test is succesfull');
 })
